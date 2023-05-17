@@ -18,7 +18,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container completed">
+                    <div class="container completed bg-secondary">
                         <div class="mt-4 text-success text-center">
                             <h4>Completed Tasks</h4>
                         </div>

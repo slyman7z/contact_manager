@@ -49,6 +49,7 @@ class ContactController extends Controller
         return view('contacts.create');
     }
 
+
     protected function getContacts()
     {
         return [
