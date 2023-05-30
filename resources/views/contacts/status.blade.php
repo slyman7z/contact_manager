@@ -38,34 +38,34 @@
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @if (count($contacts))
+                                <tbody>{{--@if (count($contacts))
                                     @foreach ($contacts as $id => $contact)
                                     @if ($contact['status'] === 'pending')
                                     @continue
-                                    @endif
+                                    @endif--}}
 
-                                    <tr class="table-danger">
+                                    {{--<tr class="table-danger">
                                         <th scope="row">{{$loop->iteration}}</th>
-                                        <td>{{$contact['name']}}</td>
-                                        <td>{{$contact['phone']}}</td>
-                                        <td>alfred@test.com</td>
-                                        <td>Company one</td>
-                                        <td>{{$contact['status']}}</td>
-                                        <td width="150">
-                                            <a href="{{ route('contacts.show', $id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
-                                            <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
-                                            <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times mt-1"></i></a>
-                                        </td>
+                                    <td>{{$contact['name']}}</td>
+                                    <td>{{$contact['phone']}}</td>
+                                    <td>alfred@test.com</td>
+                                    <td>Company one</td>
+                                    <td>{{$contact['status']}}</td>
+                                    <td width="150">
+                                        <a href="{{ route('contacts.show', $id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
+                                        <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times mt-1"></i></a>
+                                    </td>
                                     </tr>
-                                    @endforeach
-                                    @else
+                                    --}}
+                                    {{--@endforeach--}}
+                                    {{--@else--}}
                                     <tr>
                                         <td colspan="6">
                                             <div class="alert alert-danger">No contacts found</div>
                                         </td>
                                     </tr>
-                                    @endif
+                                    {{--@endif--}}
 
                                 </tbody>
                             </table>
@@ -93,7 +93,7 @@
                             <h4>Pending Tasks</h4>
                         </div>
                         <div class="card-body">
-                            @includeif('contacts.filter')
+                            {{--@includeif('contacts.filter')
 
                             <table class="table table-striped table-hover shadow">
                                 <thead class="bg-secondary" style="position: sticky;top: 0">
@@ -113,26 +113,26 @@
 
                                     <tr class="table-secondary">
                                         <th scope="row">{{$loop->iteration}}</th>
-                                        <td>{{$contact['name']}}</td>
-                                        <td>{{$contact['phone']}}</td>
-                                        <td>alfred@test.com</td>
-                                        <td>Company one</td>
-                                        <td width="150">
-                                            <a href="{{ route('contacts.show', $id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
-                                            <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
-                                            <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times mt-1"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    @else
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="alert alert-danger">No contacts found</div>
-                                        </td>
-                                    </tr>
-                                    @endif
-
-                                </tbody>
+                            <td>{{$contact['name']}}</td>
+                            <td>{{$contact['phone']}}</td>
+                            <td>alfred@test.com</td>
+                            <td>Company one</td>
+                            <td width="150">
+                                <a href="{{ route('contacts.show', $id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
+                                <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times mt-1"></i></a>
+                            </td>
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td colspan="6">
+                                    <div class="alert alert-danger">No contacts found</div>
+                                </td>
+                            </tr>
+                            @endif
+                            --}}
+                            </tbody>
                             </table>
 
 

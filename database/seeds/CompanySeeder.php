@@ -16,7 +16,7 @@ class CompanySeeder extends Seeder
         $companies = [];
         $faker = Faker::create();
 
-        foreach (range(1, 5000) as $index) {
+        foreach (range(1, 10) as $index) {
             $company = [
                 'name' => $faker->company(),
                 'address' => $faker->address(),

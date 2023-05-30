@@ -25,31 +25,23 @@
                             <thead>
 
                                 <tr>
-                                    <th scope="col">IR:</th>
+                                    <th scope="col">#</th>
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Actions</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Company</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @if (count($contacts))
                                 @foreach ($contacts as $id => $contact)
-                                <tr class="table-danger">
-                                    <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$contact['name']}}</td>
-                                    <td>{{$contact['phone']}}</td>
-                                    <td>alfred@test.com</td>
-                                    <td>Company one</td>
-                                    <td width="150">
-                                        <a href="{{ route('contacts.show', $id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
-                                        <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times mt-1"></i></a>
-                                    </td>
-                                </tr>
+                                @include('contacts._contact', ['contact' => $contact])
                                 @endforeach
                                 @else
+
                                 <p class="text-primary"> No contacts found </p>
                                 @endif
 

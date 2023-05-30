@@ -27,10 +27,9 @@ class AddContraintsToTasks extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            Schema::table('task', function (Blueprint $table) {
-                $table->dropColumn('user_id');
-                $table->dropForeign('user_id');
-            });
+
+            $table->dropColumn('user_id');
+            $table->dropForeign('user_id');
         });
     }
 }
