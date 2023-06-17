@@ -6,7 +6,7 @@
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Task App gives you everything you need to organize your tasks easily.</p>
             <div class="d-flex justify-content-sm-center">
-                <a href="#" class="btn btn-primary btn-lg mr-2">Sign up</a>
+                <a href="{{route('contacts.index')}}" class="btn btn-primary btn-lg mr-2">Sign up</a>
                 <a href="#" class="btn btn-outline-secondary btn-lg">Sign in</a>
             </div>
         </div>

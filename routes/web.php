@@ -140,7 +140,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('contact.show');
 });
 
-//Fall Back routes
+Fall Back routes
 
 Route::fallback(function () {
     return "<h1>Sorry, the page does not exist <h1>";
@@ -159,14 +159,17 @@ Route::fallback(function () {
 }); */
 
 Route::get('/', [WelcomeController::class, 'home']);
-
+//Route::resource('/contacts', ContactController::class);
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
-Route::get('/contacts/status', [ContactController::class, 'status'])->name('contacts.status');
 Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
+Route::get('/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit'); //edit a contact form
+Route::put('/contacts/{id}', [ContactController::class, 'update'])->name('contacts.update');  //update a contact form
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');  //delete a contact form
+
 Route::resource('/companies', 'CompanyController');
 Route::resources([
     '/tag' => 'TagController',
     'tasks' => 'TaskController'
 ]);
-//Route::resource('/companies', CompanyController::class);

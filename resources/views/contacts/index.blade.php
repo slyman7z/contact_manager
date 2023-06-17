@@ -18,8 +18,14 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card-body">
                         @includeif('contacts._filter')
+                        @if($message = session('message'))
+                        <div class="alert alert-success">
+                            {{$message}}
+                        </div>
+                        @endif
 
                         <table class="table table-striped table-hover">
                             <thead>
@@ -37,18 +43,25 @@
                             </thead>
                             <tbody>
                                 @if (count($contacts))
-                                @foreach ($contacts as $id => $contact)
-                                @include('contacts._contact', ['contact' => $contact])
+
+                                @foreach ($contacts as $index => $contact)
+                                @include('contacts._contact', ['contact' => $contact, 'index'=>$index])
                                 @endforeach
                                 @else
 
                                 <p class="text-primary"> No contacts found </p>
+                                <tr class="table-danger">
+                                    <td>
+                                        <p class="text-primary"> No contacts found </p>
+                                    </td>
+                                </tr>
+
                                 @endif
 
                             </tbody>
                         </table>
 
-
+                        {{--
                         <nav class="mt-4">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item disabled">
@@ -61,7 +74,10 @@
                                     <a class="page-link" href="#">Next</a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> --}}
+
+                        {{$contacts->appends(request()->only('orderBy', 'q'))->links()}}
+
                     </div>
                 </div>
             </div>

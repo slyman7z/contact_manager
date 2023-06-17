@@ -28,7 +28,7 @@ class ContactsSeeder extends Seeder
                     'phone' => $faker->phoneNumber(),
                     'email' => $faker->email(),
                     'address' => $faker->address(),
-                    'company_id' => $company->id,
+                    'company_id' => Company::pluck('id')->random(),
                     'created_at' => now(),
                     'updated_at' => now(),
 
@@ -38,6 +38,6 @@ class ContactsSeeder extends Seeder
         }
         // DB::table('contacts')->delete();
         //DB::table('contacts')->insert($contacts);
-        Contacts::insert($contacts);
+        Contacts::create($contacts);
     }
 }

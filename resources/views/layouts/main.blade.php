@@ -31,9 +31,10 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="#" class="nav-link">Staff List</a></li>
                     <li class="nav-item active"><a href="#" class="nav-link">Profile</a></li>
-                    <li class="nav-item active"><a href="{{route('contacts.status')}}" class="nav-link text-danger">Manage Task</a></li>
+                    <li class="nav-item active"><a href="#" class="nav-link text-danger">Manage Task</a></li>
 
                 </ul>
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-2"><a href="#" class="btn btn-outline-secondary">Login</a></li>
                     <li class="nav-item"><a href="#" class="btn btn-outline-primary">Register</a></li>
@@ -47,6 +48,7 @@
                         </div>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>
